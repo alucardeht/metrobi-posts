@@ -7,6 +7,9 @@ type ThemeConfiguration = {
     third: string;
     fourth: string;
   };
+  primary: {
+    white: string;
+  };
 };
 
 declare module "styled-components" {

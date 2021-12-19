@@ -13,6 +13,9 @@ export const Theme = ({ children }: Props) => {
       third: "#35589a",
       fourth: "#370665",
     },
+    primary: {
+      white: "#ffffff",
+    },
   };
 
   return <ThemeProvider theme={default_config}>{children}</ThemeProvider>;
