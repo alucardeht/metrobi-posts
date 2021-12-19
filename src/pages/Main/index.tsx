@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
+import GradientContainer from "../../components/GradientContainer/GradientContainer";
 import Loader from "../../components/Loader/Loader";
 import PostsService from "../../services/api/Posts/PostsService";
 import { Post } from "../../services/api/Posts/PostsTypes";
 import {
-  Container,
   PostsContainer,
   PostCardContainer,
   PostCardTitle,
-  PostCardText,
+  PostCardLinkContainer,
 } from "./styles";
 
 export const Main = () => {
@@ -27,20 +27,26 @@ export const Main = () => {
 
   const renderPost = (item: Post) => {
     return (
-      <PostCardContainer>
-        <PostCardTitle>{item.title}</PostCardTitle>
-        <PostCardText>{item.body}</PostCardText>
-      </PostCardContainer>
+      <PostCardLinkContainer
+        to="/post"
+        state={{
+          post: item,
+        }}
+      >
+        <PostCardContainer>
+          <PostCardTitle>{item.title}</PostCardTitle>
+        </PostCardContainer>
+      </PostCardLinkContainer>
     );
   };
 
   return (
-    <Container>
+    <GradientContainer>
       {loading ? (
         <Loader />
       ) : (
         <PostsContainer>{posts?.map(renderPost)}</PostsContainer>
       )}
-    </Container>
+    </GradientContainer>
   );
 };

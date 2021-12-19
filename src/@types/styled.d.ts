@@ -9,6 +9,7 @@ type ThemeConfiguration = {
   };
   primary: {
     white: string;
+    black: string;
   };
 };
 

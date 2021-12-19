@@ -1,12 +1,12 @@
 import React from "react";
-import { Main } from "./pages/Main";
 import "./App.css";
 import { Theme } from "./services/theme";
+import App from "./services/routes";
 
 const Teste = () => {
   return (
     <Theme>
-      <Main />
+      <App />
     </Theme>
   );
 };

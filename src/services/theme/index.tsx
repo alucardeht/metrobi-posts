@@ -15,6 +15,7 @@ export const Theme = ({ children }: Props) => {
     },
     primary: {
       white: "#ffffff",
+      black: "#000000",
     },
   };
 
